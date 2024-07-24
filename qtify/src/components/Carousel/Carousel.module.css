@@ -1,0 +1,35 @@
+.carouselContainer {
+    position: relative;
+    width: 100%;
+  }
+  
+  .navigationPrev,
+  .navigationNext {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    cursor: pointer;
+  }
+  
+  .navigationPrev {
+    left: 0;
+  }
+  
+  .navigationNext {
+    right: 0;
+  }
+  
+  .albumCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .albumCard img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
