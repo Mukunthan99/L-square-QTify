@@ -3,6 +3,7 @@ import styles from "./AlbumCard.module.css";
 import { Chip, Tooltip } from "@mui/material";
 
 function AlbumCard({ data, type }) {
+    console.log(data)
   const getCard = (type) => {
     switch (type) {
       case "album": {
@@ -29,12 +30,13 @@ function AlbumCard({ data, type }) {
         );
       }
       case "song": {
+        console.log(data)
         const { image, likes, title } = data;
 
         return (
           <div className={styles.wrapper}>
             <div className={styles.card}>
-              <img src={image} alt="song" />
+              <img className={styles.image}  src={image} alt="song" />
               <div className={styles.banner}>
                 <div className={styles.pill}>
                   <p>{likes} Likes</p>

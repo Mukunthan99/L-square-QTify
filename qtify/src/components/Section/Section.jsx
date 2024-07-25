@@ -32,11 +32,27 @@ const Section = ({ title, endpoint }) => {
     <div className={styles.section}>
       <div className={styles.sectionHeader}>
         <div>{title}</div>
-        <button className={styles.sectionButton} onClick={toggleCollapse}>
+        {/* <button className={styles.sectionButton} onClick={toggleCollapse}>
           {collapsed ? "Show All" : "Collapse"}
-        </button>
+        </button> */}
+
+        {collapsed ? (
+          <button className={title === "song" ? styles.songButton:styles.sectionButton} onClick={toggleCollapse}>
+            Show All
+          </button>
+        ) : (
+          <button className={title === "song" ? styles.songButton:styles.sectionButton} onClick={toggleCollapse}>
+            Collapse
+          </button>
+        )}
       </div>
-      {collapsed ? <Carousel data={albums} /> : <Grid data={albums} />}
+      {title === "song" ? (
+        <Carousel data={albums} />
+      ) : collapsed ? (
+        <Carousel data={albums} />
+      ) : (
+        <Grid data={albums} />
+      )}
     </div>
   );
 };

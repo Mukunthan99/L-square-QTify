@@ -27,12 +27,43 @@ const Carousel = ({ data }) => {
           slidesPerView={8}
           slidesPerGroup={2}
           loop
+          //loop
+        breakpoints={{
+          640: {
+            slidesPerView: 5,
+            slidesPerGroup: 2,
+            spaceBetween: 1,
+          },
+          768: {
+            slidesPerView: 6,
+            slidesPerGroup: 2,
+            spaceBetween: 1,
+          },
+          1024: {
+            slidesPerView: 7,
+            slidesPerGroup: 2,
+            spaceBetween: 1,
+          },
+          1440: {
+            slidesPerView: 8,
+            slidesPerGroup: 2,
+            spaceBetween: 1,
+          },
+        }}
         >
-          {data.map((album) => (
+          {
+          data.songs ? (data.map((album) => (
             <SwiperSlide key={album.id}>
               <AlbumCard data={album} type={'album'}></AlbumCard>
             </SwiperSlide>
-          ))}
+          ))):(data.map((album) => (
+            <SwiperSlide key={album.id}>
+              <AlbumCard data={album} type={'song'}></AlbumCard>
+            </SwiperSlide>
+          ))
+
+          )
+          }
         </Swiper>
         <div className={styles.navigationNext} id="swiper-button-next">
           <img src={rightArrow} alt="Next" />
