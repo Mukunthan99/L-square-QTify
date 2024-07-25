@@ -8,22 +8,7 @@ import axios from 'axios';
 
 
 function App() {
-  // const [topALbums,setTopAlbums]=useState([]);
-
-
-  // const getTopAlbums = async () => {
-
-  //   try{
-  //     let res=await axios.get('https://qtify-backend-labs.crio.do/albums/top');
-  //     console.log(res.data);
-  //     setTopAlbums(res.data);
-  //   }catch(err){
-  //     console.log(err);
-  //   }
-  // };
-  // useEffect(() => {
-  //   getTopAlbums();
-  // }, []);
+  
 
   return (
     <div className="App">
@@ -32,7 +17,7 @@ function App() {
         <Hero />
         <Section title={'Top Albums'} endpoint={'https://qtify-backend-labs.crio.do/albums/top'}/>
         <Section title={'New Albums'} endpoint={'https://qtify-backend-labs.crio.do/albums/new'}/>
-        <Section title={'song'} endpoint={'https://qtify-backend-labs.crio.do/songs'}/>
+        <Section title={'Song'} endpoint={'https://qtify-backend-labs.crio.do/songs'}/>
       </header>
     </div>
   );

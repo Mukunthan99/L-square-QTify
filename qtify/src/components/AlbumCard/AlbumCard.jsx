@@ -3,7 +3,7 @@ import styles from "./AlbumCard.module.css";
 import { Chip, Tooltip } from "@mui/material";
 
 function AlbumCard({ data, type }) {
-    console.log(data)
+    //console.log(data)
   const getCard = (type) => {
     switch (type) {
       case "album": {
@@ -30,7 +30,7 @@ function AlbumCard({ data, type }) {
         );
       }
       case "song": {
-        console.log(data)
+        //console.log(data)
         const { image, likes, title } = data;
 
         return (

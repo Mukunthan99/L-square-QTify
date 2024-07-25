@@ -8,7 +8,7 @@ import Grid from "../Grid/Grid";
 import axios from "axios";
 
 const Section = ({ title, endpoint }) => {
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
   const [albums, setAlbums] = useState([]);
 
   const toggleCollapse = () => {
@@ -28,6 +28,8 @@ const Section = ({ title, endpoint }) => {
     getAlbums();
   }, []);
 
+  console.log(title.charAt(0).toUpperCase())
+
   return (
     <div className={styles.section}>
       <div className={styles.sectionHeader}>
@@ -37,16 +39,16 @@ const Section = ({ title, endpoint }) => {
         </button> */}
 
         {collapsed ? (
-          <button className={title === "song" ? styles.songButton:styles.sectionButton} onClick={toggleCollapse}>
+          <button className={title === "Song" ? styles.songButton:styles.sectionButton} onClick={toggleCollapse}>
             Show All
           </button>
         ) : (
-          <button className={title === "song" ? styles.songButton:styles.sectionButton} onClick={toggleCollapse}>
+          <button className={title === "Song" ? styles.songButton:styles.sectionButton} onClick={toggleCollapse}>
             Collapse
           </button>
         )}
       </div>
-      {title === "song" ? (
+      {title === "Song" ? (
         <Carousel data={albums} />
       ) : collapsed ? (
         <Carousel data={albums} />
